@@ -1,0 +1,143 @@
+body{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
+.logo{
+    position: fixed;
+    top: 30;
+    left: 30;
+}
+.slide-container {
+    width: 100%;
+    height:85vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.image-slider{
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+.slides-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px;
+}
+
+.img{
+    position: relative;
+    width: 240px;
+    height: 370px;
+    transition: 0.5s;
+    filter: blur(2px);
+}
+
+.button {
+    position: absolute;
+    width: 240px;
+    height: 370px;
+    transition: 0.5s;
+    background-color: rgba(67, 67, 151, 0.2);
+    
+}
+
+#limited-edition1:target ~ .image-slider #img1,
+#limited-edition1:target ~.image-slider #button-1{
+    width:380px;
+    height: 585px;
+    background-color: transparent;
+    filter: blur(0px);
+    
+}
+#limited-edition2:target ~ .image-slider #img2,
+#limited-edition2:target ~.image-slider #button-2{
+    width:380px;
+    height: 585px;
+    background-color: transparent;
+    filter: blur(0px);
+}
+#slider-span3:target ~ .image-slider #img3,
+#slider-span3:target ~.image-slider #button-3{
+    width:380px;
+    height: 585px;
+    background-color: transparent;
+    filter: blur(0px);
+}
+#slider-span4:target ~ .image-slider #img4,
+#slider-span4:target ~.image-slider #button-4{
+    width:380px;
+    height: 585px;
+    background-color: transparent;
+    filter: blur(0px);
+}
+#limited-edition1:target ~.image-slider{
+    left:40%;
+}
+#limited-edition2:target ~.image-slider{
+    left:15%;
+}
+#slider-span3:target ~.image-slider{
+    left:-15%;
+}
+#slider-span4:target ~.image-slider{
+    left:-40%;
+}
+
+/* COFFEEEE ~RM */
+
+
+/* bg ule */
+.app__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    filter: blur(8px);
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+ }
+  .app__bg::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1;
+    opacity: 0.8;
+ }
+  .app__bg__image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateX(var(--image-translate-offset, 0));
+    width: 180%;
+    height: 180%;
+    transition: transform 1000ms ease, opacity 1000ms ease;
+    overflow: hidden;
+ }
+  .app__bg__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+  .app__bg__image.current--image {
+    opacity: 1;
+    --image-translate-offset: 0;
+ }
